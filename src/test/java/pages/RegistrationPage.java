@@ -104,7 +104,7 @@ public class RegistrationPage {
 
     }
 
-    public RegistrationPage setSity(String value) {
+    public RegistrationPage setCity(String value) {
         $("#city").click();
         $("#stateCity-wrapper").$(byText(value)).click();
 
