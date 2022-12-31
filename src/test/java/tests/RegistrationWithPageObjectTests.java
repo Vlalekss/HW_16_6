@@ -28,32 +28,32 @@ public class RegistrationWithPageObjectTests extends TestBase {
         String City = "Delhi";
 
         registrationPage.openPage()
-                .setFirstName("Vlad")
-                .setLastName("Aleksev")
-                .setUserEmail("vlad@aleksev.com")
-                .setGender("Other")
-                .setPhone("1234567890")
-                .setBirthDate("30", "July", "2008")
-                .setSubject("Math")
-                .setHobbies("Sports")
-                .setPicture("img/1.png")
-                .setAddress("Some address 1")
-                .setState("NCR")
-                .setCity("Delhi")
+                .setFirstName(userName)
+                .setLastName(lastName)
+                .setUserEmail(email)
+                .setGender(gender)
+                .setPhone(mobile)
+                .setBirthDate(dayBirth, monthBirth, yearBirth)
+                .setSubject(subjects)
+                .setHobbies(hobbies)
+                .setPicture(picture)
+                .setAddress(currentAddress)
+                .setState(state)
+                .setCity(City)
                 .submit();
 
 
         registrationPage.verifyResultsModalAppears()
-                .verifyResults("Student Name", "Vlad Aleksev")
-                .verifyResults("Student Email", "vlad@aleksev.com")
-                .verifyResults("Gender", "Other")
-                .verifyResults("Mobile", "1234567890")
-                .verifyResults("Date of Birth", "30 July,2008")
-                .verifyResults("Subjects", "Math")
-                .verifyResults("Hobbies", "Sports")
-                .verifyResults("Picture", "1.png")
-                .verifyResults("Address", "Some address 1")
-                .verifyResults("State and City", "NCR Delhi");
+                .verifyResults("Student Name", userName+" "+lastName)
+                .verifyResults("Student Email", email)
+                .verifyResults("Gender", gender)
+                .verifyResults("Mobile", mobile)
+                .verifyResults("Date of Birth", dayBirth+" "+monthBirth+" "+yearBirth)
+                .verifyResults("Subjects", subjects)
+                .verifyResults("Hobbies", hobbies)
+                .verifyResults("Picture", picture)
+                .verifyResults("Address", currentAddress)
+                .verifyResults("State and City", state+" "+City);
 
     }
 
