@@ -22,7 +22,7 @@ public class RegistrationWithPageObjectTests extends TestBase {
         String yearBirth = "2008";
         String subjects = "Math";
         String hobbies = "Sports";
-        String picture = "img/1.png";
+        String picture = "1.png";
         String currentAddress = "Some address 1";
         String state = "NCR";
         String City = "Delhi";
@@ -36,7 +36,7 @@ public class RegistrationWithPageObjectTests extends TestBase {
                 .setBirthDate(dayBirth, monthBirth, yearBirth)
                 .setSubject(subjects)
                 .setHobbies(hobbies)
-                .setPicture(picture)
+                .setPicture("img/"+picture)
                 .setAddress(currentAddress)
                 .setState(state)
                 .setCity(City)
@@ -48,7 +48,7 @@ public class RegistrationWithPageObjectTests extends TestBase {
                 .verifyResults("Student Email", email)
                 .verifyResults("Gender", gender)
                 .verifyResults("Mobile", mobile)
-                .verifyResults("Date of Birth", dayBirth+" "+monthBirth+" "+yearBirth)
+                .verifyResults("Date of Birth", dayBirth+" "+monthBirth+","+yearBirth)
                 .verifyResults("Subjects", subjects)
                 .verifyResults("Hobbies", hobbies)
                 .verifyResults("Picture", picture)
